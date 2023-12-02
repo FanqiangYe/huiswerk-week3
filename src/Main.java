@@ -19,23 +19,30 @@ public class Main {
             String input = scanner.nextLine();
 
 
-            int number = 0;
             if (input.equals("x")) {
                 play = false;
             } else if (input.equals("v")) {
                 System.out.println("Type een cijfer in van 0 t/m 9");
-                number = scanner.nextInt();
+                int number = scanner.nextInt();
                 scanner.nextLine();
-            }
-            else {
-                System.out.println(ongeldig);
-            }
 
-            if (number < 10 && number >= 0) {
-                String result = translator.translate(number);
-                System.out.println("De vertaling van " + number + " is " + result);
-            } else {
-                System.out.println(ongeldig);
+
+                if (input.equals("x")) {
+                    play = false;  // Stop de lus als 'x' is ingevoerd
+                } else if (input.equals("v")) {
+                    System.out.println("Type een cijfer in van 0 t/m 9");
+                    number = scanner.nextInt();
+                    scanner.nextLine();  // Overslaan van de newline
+
+                    if (number < 10 && number >= 0) {
+                        String result = translator.translate(number);
+                        System.out.println("De vertaling van " + number + " is " + result);
+                    } else {
+                        System.out.println(ongeldig);
+                    }
+                } else {
+                    System.out.println(ongeldig);
+                }
             }
         }
     }
