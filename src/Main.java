@@ -28,11 +28,11 @@ public class Main {
 
 
                 if (input.equals("x")) {
-                    play = false;  // Stop de lus als 'x' is ingevoerd
+                    play = false;
                 } else if (input.equals("v")) {
                     System.out.println("Type een cijfer in van 0 t/m 9");
                     number = scanner.nextInt();
-                    scanner.nextLine();  // Overslaan van de newline
+                    scanner.nextLine();
 
                     if (number < 10 && number >= 0) {
                         String result = translator.translate(number);
